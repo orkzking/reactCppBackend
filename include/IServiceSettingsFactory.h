@@ -5,5 +5,5 @@
 
 class IServiceSettingsFactory {
 	public:
-	virtual shared_ptr<Settings> get_settings() const =0;
+	virtual std::shared_ptr<restbed::Settings> get_settings() const =0;
 };

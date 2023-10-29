@@ -4,7 +4,7 @@
 #include "json.hpp"
 
 CalcResourceFactory::CalcResourceFactory() {
-	_resource = make_shared<Ressource>();
+	_resource = make_shared<Resource>();
 	_resource->set_path(
 	  "/{operation: add|substract|multiply|divide}"
 	  "/{num1: [-+]?[0-9]*\\.?[0-9]*}"
@@ -23,7 +23,7 @@ void CalcResourceFactory::get_handler(const shared_ptr<Session> session){
 	const auto [num1,num2,operation] = get_path_parameter(session);
 	const auto result = calculate(num1,num2,operation);
 	auto content = to_json(result);
-	session->close(OK, content, {{"Content-Length", to_string(content.size())}})
+	session->close(OK, content, {{"Content-Length", to_string(content.size())}});
 }
 
 tuple<float, float, string> CalcResourceFactory::get_path_parameter(const shared_ptr<Session> session) {
@@ -52,8 +52,8 @@ float CalcResourceFactory::calculate(float num1, float num2, string operation) {
 string CalcResourceFactory::to_json(float result) {
 	ostringstream str_stream;
 	str_stream<<result;
-	json jsonResult = {
+	nlohmann::json jsonResult = {
 		{"result", str_stream.str()}
     };
-    return jsonResult.dump;
+    return jsonResult.dump();
 }

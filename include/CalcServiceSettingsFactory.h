@@ -5,7 +5,7 @@
 class CalcServiceSettingsFactory : public IServiceSettingsFactory {
 	public:
 	CalcServiceSettingsFactory();
-	shared_ptr<Settings> get_settings() const final;
+	std::shared_ptr<restbed::Settings> get_settings() const final;
 	private:
-	shared_ptr<Settings> _settings;
+	std::shared_ptr<restbed::Settings> _settings;
 };
