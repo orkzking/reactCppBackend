@@ -4,6 +4,6 @@ add_executable(CalculatorAPI main.cpp CalcResourceFactory.cpp CalcService.cpp Ca
 
 target_link_libraries(CalculatorAPI restbed)
 
-target_include_directories(CalculatorAPI PUBLIC ${CMAKE_SRC_DIR}/include)
+target_include_directories(CalculatorAPI PUBLIC ../include)
 
 set_property(TARGET CalculatorAPI PROPERTY CXX_STANDARD 17)
