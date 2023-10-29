@@ -8,5 +8,5 @@ using namespace restbed;
 
 class IResourceFactory {
 	public:
-	virtual shared_ptr<Ressource> get_resource() const =0;
+	virtual shared_ptr<Resource> get_resource() const =0;
 };

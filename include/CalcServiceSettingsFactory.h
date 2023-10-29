@@ -8,4 +8,4 @@ class CalcServiceSettingsFactory : public IServiceSettingsFactory {
 	shared_ptr<Settings> get_settings() const final;
 	private:
 	shared_ptr<Settings> _settings;
-}
+};

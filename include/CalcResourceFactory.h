@@ -15,4 +15,4 @@ class CalcResourceFactory : public IResourceFactory {
 	tuple<float, float, string> get_path_parameter(const shared_ptr<Session> session);
 	void get_handler(const shared_ptr<Session> session);
 	shared_ptr<Resource> _resource;
-}
+};

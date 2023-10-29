@@ -2,5 +2,5 @@
 
 class IService {
 	public:
-	virual void start()=0;
+	virtual void start()=0;
 };
